@@ -68,7 +68,7 @@ Key steps performed in Databricks to prepare the dataset:
 
 2. **Feature Engineering**
    Enhance temporal analysis by adding new columns:
-
+   ```sql
    ALTER TABLE restaurant_bronze
    ADD COLUMNS (year INT, month INT, day_name STRING);
 
@@ -79,7 +79,7 @@ Key steps performed in Databricks to prepare the dataset:
 
 3. **Final Table Creation**
   Prepare the table for Power BI dashboards:
-
+   ```sql
   CREATE OR REPLACE TABLE restaurant AS
   SELECT *,
        date_format(order_date, 'MMM') AS month_name
