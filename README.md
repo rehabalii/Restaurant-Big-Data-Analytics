@@ -80,18 +80,21 @@ Key steps performed in Databricks to prepare the dataset:
 3. **Final Table Creation**
   Prepare the table for Power BI dashboards:
    ```sql
-  CREATE OR REPLACE TABLE restaurant AS
-  SELECT *,
+-- Create final table for Power BI
+CREATE OR REPLACE TABLE restaurant AS
+SELECT *,
        date_format(order_date, 'MMM') AS month_name
-  FROM restaurant_bronze;
+FROM restaurant_bronze;
 
-  ALTER TABLE restaurant
-  ADD COLUMNS (weekend_flag STRING, day_number INT);
+-- Add additional columns
+ALTER TABLE restaurant
+ADD COLUMNS (weekend_flag STRING, day_number INT);
 
-  UPDATE restaurant
-  SET weekend_flag = CASE WHEN is_weekend = 1 THEN 'Yes' ELSE 'No' END,
+-- Update new columns
+UPDATE restaurant
+SET weekend_flag = CASE WHEN is_weekend = 1 THEN 'Yes' ELSE 'No' END,
     day_number = dayofweek(order_date);
-```sql
+
 -> These steps ensure the dataset is clean, enriched, and ready for visualization in Power BI.
 
 ---
