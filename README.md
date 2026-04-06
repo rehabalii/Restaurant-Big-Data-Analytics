@@ -92,7 +92,7 @@ Key steps performed in Databricks to prepare the dataset:
   SET weekend_flag = CASE WHEN is_weekend = 1 THEN 'Yes' ELSE 'No' END,
     day_number = dayofweek(order_date);
 
-These steps ensure the dataset is clean, enriched, and ready for visualization in Power BI.
+-> These steps ensure the dataset is clean, enriched, and ready for visualization in Power BI.
 
 ---
 
