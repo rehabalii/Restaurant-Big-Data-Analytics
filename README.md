@@ -77,7 +77,7 @@ Key steps performed in Databricks to prepare the dataset:
     month = month(order_date),
     day_name = date_format(order_date, 'EEEE');
 
-**Final Table Creation**
+3. **Final Table Creation**
   Prepare the table for Power BI dashboards:
 
   CREATE OR REPLACE TABLE restaurant AS
