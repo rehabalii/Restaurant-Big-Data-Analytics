@@ -91,7 +91,7 @@ Key steps performed in Databricks to prepare the dataset:
   UPDATE restaurant
   SET weekend_flag = CASE WHEN is_weekend = 1 THEN 'Yes' ELSE 'No' END,
     day_number = dayofweek(order_date);
-
+```sql
 -> These steps ensure the dataset is clean, enriched, and ready for visualization in Power BI.
 
 ---
